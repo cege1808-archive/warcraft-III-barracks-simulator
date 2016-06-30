@@ -4,5 +4,4 @@ class Peasant < Unit
     super(35,0)
   end
 
-
 end
