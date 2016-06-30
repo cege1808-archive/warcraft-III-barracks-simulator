@@ -13,16 +13,16 @@ describe Unit do
 
   describe "#damage" do
     it "should reduce the unit's health_points by the attack_power specified" do
-      @unit.damage(12)
-      expect(@unit.health_points).to eq(88) # HP started at 100 but just got hit by 12 (see subject)
+      @unit.damage(@unit)
+      expect(@unit.health_points).to eq(97) 
     end
   end
 
   describe "#attack!" do
     it "should deal the appropriate (attack power based) damage to the enemy unit" do
-      enemy_unit = Unit.new(40, 5)
-      expect(enemy_unit).to receive(:damage).with(3)
-      @unit.attack!(enemy_unit)
+      meow = Unit.new(40, 55)
+      meow.attack!(@unit)
+      expect(@unit.health_points).to eq(45)
     end
   end
 
